@@ -1,7 +1,9 @@
 <?php
     require 'connection.php';
     session_start();
-    // if(isset($_SESSION['email']))
+    if(isset($_SESSION['email'])){
+        header('location: index.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +20,7 @@
     </head>
     <body>
         <div>
-        <?php
+            <?php
                 require 'header.php';
             ?>
             <br><br>

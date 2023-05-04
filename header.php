@@ -15,6 +15,7 @@
                            if(isset($_SESSION['email'])){
                            ?>
                            <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                           <li><a href="Read.php"></span> Table</a></li>
                            <?php
                            }else{
                             ?>

@@ -17,7 +17,8 @@
         <meta http-equiv="refresh" content="2;url=signup.php" />
         <?php
     }
-$year=$_POST['year'];
+    
+    $year=$_POST['year'];
     $duplicate_user_query="select id from users where email='$email'";
     $duplicate_user_result=mysqli_query($con,$duplicate_user_query) or die(mysqli_error($con));
     $rows_fetched=mysqli_num_rows($duplicate_user_result);
