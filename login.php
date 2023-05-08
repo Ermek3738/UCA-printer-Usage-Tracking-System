@@ -14,6 +14,15 @@
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/style.css" type="text/css">
     </head>
+    <style>
+    body{
+        background-image: url('background.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+    
+</style>
     <body>
         <div>
             <?php
