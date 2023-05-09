@@ -31,11 +31,11 @@
     }
 
     thead th,
-    tbody th {
+    tbody th,h3 {
     color: #fff;
     }
 
-    tbody td {
+    tbody td, p {
     font-weight: 500;
     color: rgba(255,255,255,.65);
     }
@@ -61,20 +61,56 @@
 
         $sql = "INSERT INTO student_info VALUES ('$Date','$FullName','$Year','$PaperNo','$Reason')";
         ?>
-
+        <section class="intro">
+        <div>
+            <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0,0,0,.79);">
+            <div class="container">
+                <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="card bg-dark shadow-2-strong">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                        <h3>Your recorded Data</h3> <br>
+                        <table class="table table-dark table-borderless mb-0">
+                            <thead>
+                            <tr>
+                                <th scope="col">DATE</th>
+                                <th scope="col">NAME</th>
+                                <th scope="col">YEAR</th>
+                                <th scope="col">PAPER NO</th>
+                                <th scope="col">PURPOSE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            
+                            
         <?php
         if(mysqli_query($conn, $sql)){
-            echo "<h3>Your recorded Data</h3>";
- 
-                echo "<table border = 1>";
-                echo "<tr>";
-                echo "<td>$Date</td>";
+                echo "<th scope='row'>$Date</th>";
                 echo "<td>$FullName</td>";
                 echo "<td>$Year</td>";
                 echo "<td>$PaperNo</td>";
                 echo "<td>$Reason</td>";
-                echo "</tr>";
-                echo "</table>";
+        ?>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                           
+                </div>
+                </div>
+                <br>
+                <p>Click <a href = "index.php">here</a> to submit the next
+                    record.</p> <br>
+                <p>Click <a href = "Read.php">here</a> to read the stored
+                    records.</p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+        <?php
         } else{
             echo "ERROR! $sql. "
                 . mysqli_error($conn);
@@ -82,98 +118,6 @@
          
         mysqli_close($conn);
         ?>
-        <section class="intro">
-  <div>
-    <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0,0,0,.79);">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12">
-            <div class="card bg-dark shadow-2-strong">
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table table-dark table-borderless mb-0">
-                    <thead>
-                      <tr>
-                        <th scope="col">EMPLOYEES</th>
-                        <th scope="col">POSITION</th>
-                        <th scope="col">CONTACTS</th>
-                        <th scope="col">AGE</th>
-                        <th scope="col">ADDRESS</th>
-                        <th scope="col">SALARY</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">Tiger Nixon</th>
-                        <td>System Architect</td>
-                        <td>tnixon12@example.com</td>
-                        <td>61</td>
-                        <td>Edinburgh</td>
-                        <td>$320,800</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Sonya Frost</th>
-                        <td>Software Engineer</td>
-                        <td>sfrost34@example.com</td>
-                        <td>23</td>
-                        <td>Edinburgh</td>
-                        <td>$103,600</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Jena Gaines</th>
-                        <td>Office Manager</td>
-                        <td>jgaines75@example.com</td>
-                        <td>30</td>
-                        <td>London</td>
-                        <td>$90,560</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Quinn Flynn</th>
-                        <td>Support Lead</td>
-                        <td>qflyn09@example.com</td>
-                        <td>22</td>
-                        <td>Edinburgh</td>
-                        <td>$342,000</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Charde Marshall</th>
-                        <td>Regional Director</td>
-                        <td>cmarshall28@example.com</td>
-                        <td>36</td>
-                        <td>San Francisco</td>
-                        <td>$470,600</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Haley Kennedy</th>
-                        <td>Senior Marketing Designer</td>
-                        <td>hkennedy63@example.com</td>
-                        <td>43</td>
-                        <td>London</td>
-                        <td>$313,500</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Tatyana Fitzpatrick</th>
-                        <td>Regional Director</td>
-                        <td>tfitzpatrick00@example.com</td>
-                        <td>19</td>
-                        <td>Warsaw</td>
-                        <td>$385,750</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-        <p>Click <a href = "index.html">here</a> to submit the next
-        record.</p>
-        <p>Click <a href = "Read.php">here</a> to read the stored
-        records.</p>
 </body>
  
 </html>
